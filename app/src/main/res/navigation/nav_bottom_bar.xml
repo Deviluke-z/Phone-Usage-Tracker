@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_bottom_bar"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="minhduc.deviluke.phoneusagetracker.view.fragment.home_screen.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_blockFragment"
+            app:destination="@id/blockFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_timelineFragment"
+            app:destination="@id/timelineFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/blockFragment"
+        android:name="minhduc.deviluke.phoneusagetracker.view.fragment.block_screen.BlockFragment"
+        android:label="fragment_block"
+        tools:layout="@layout/fragment_block">
+        <action
+            android:id="@+id/action_blockFragment_to_timelineFragment"
+            app:destination="@id/timelineFragment" />
+        <action
+            android:id="@+id/action_blockFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/timelineFragment"
+        android:name="minhduc.deviluke.phoneusagetracker.view.fragment.timeline_screen.TimelineFragment"
+        android:label="fragment_timeline"
+        tools:layout="@layout/fragment_timeline">
+        <action
+            android:id="@+id/action_timelineFragment_to_blockFragment"
+            app:destination="@id/blockFragment" />
+        <action
+            android:id="@+id/action_timelineFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+</navigation>
